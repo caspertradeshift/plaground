@@ -23,7 +23,7 @@ trait BackendServiceComponent {
     lazy val proxyServiceComponent1 = BackendServiceComponent.this
     
     implicit val companyAccountFormat = jsonFormat2(CompanyAccount)
-    implicit val userFormat = jsonFormat1(User)
+    implicit val userFormat1 = jsonFormat1(User)
 
   
     private val companies = makeCache[Option[CompanyAccount]]
