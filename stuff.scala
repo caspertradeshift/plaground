@@ -18,12 +18,12 @@ trait BackendServiceComponent {
   val backendService: BackendService
 
   class BackendService(serviceConfig: Configuration.Service) extends ExternalService(serviceConfig, config, system, IO(Http)(system)) with IDFormats {
-    override def prefix = super.prefix + "/rest1"
+    override def prefix = super.prefix + "/rest"
     
-    lazy val proxyServiceComponent1 = BackendServiceComponent.this
+    lazy val proxyServiceComponent = BackendServiceComponent.this
     
     implicit val companyAccountFormat = jsonFormat2(CompanyAccount)
-    implicit val userFormat1 = jsonFormat1(User)
+    implicit val userFormat = jsonFormat1(User)
 
   
     private val companies = makeCache[Option[CompanyAccount]]
