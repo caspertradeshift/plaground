@@ -26,7 +26,7 @@ trait BackendServiceComponent {
     implicit val userFormat = jsonFormat1(User)
 
   
-    private val companies = makeCache[Option[CompanyAccount]]
+    private val companies1 = makeCache[Option[CompanyAccount]]
     def getCompany(id: UUID) =
       companies(id) {
         val call = asOption[CompanyAccount]
