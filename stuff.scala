@@ -20,7 +20,7 @@ trait BackendServiceComponent {
   class BackendService(serviceConfig: Configuration.Service) extends ExternalService(serviceConfig, config, system, IO(Http)(system)) with IDFormats {
     override def prefix = super.prefix + "/rest"
     
-    lazy val proxyServiceComponent = BackendServiceComponent.this
+    lazy val proxyServiceComponent1 = BackendServiceComponent.this
     
     implicit val companyAccountFormat = jsonFormat2(CompanyAccount)
     implicit val userFormat = jsonFormat1(User)
