@@ -1,4 +1,4 @@
-package com.tradeshift.proxy.external
+package com.tradeshift.proxy.casper
 
 import com.tradeshift.proxy.main.SystemComponent
 import com.tradeshift.scala.IDFormats
